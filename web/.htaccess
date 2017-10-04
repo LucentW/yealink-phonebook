@@ -43,6 +43,15 @@
 
     # Rewrite all other queries to the front controller.
     RewriteRule .? %{ENV:BASE}/index.php [L]
+
+    # Order deny,allow
+    # Deny from all
+    # AuthName "Password protected"
+    # AuthType Basic
+    # AuthUserFile /path/to/.htpasswd
+    # Require valid-user
+    # Allow from 127.0.0.1  # your yealink phone IP.
+    # Satisfy Any
 </IfModule>
 
 <IfModule !mod_rewrite.c>
